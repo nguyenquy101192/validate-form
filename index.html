@@ -2,21 +2,23 @@
 <html>
 <head>
     <title>Validate form</title>
+    <script type="text/javascript" charset="utf-8" src="js/validate-form.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/jquery-1.11.2.js"></script>
 </head>
 <body>
-    <form method="POST" action="/admin.php">
+    <form method="POST" action="/admin.php" id="form-validate">
         <table>
             <th><h1>Validate form</h1></th>
             <th>
                 <tr>
                     <td><label>Name</label></td>
-                    <td><input name="name" type="text"/></td>
+                    <td><input name="name" type="text" class="required"/></td>
                 </tr>
             </th>
             <th>
                 <tr>
                     <td><label>Email</label></td>
-                    <td><input name="email" type="email"/></td>
+                    <td><input name="email" type="email" class="required"/></td>
                 </tr>
             </th>
             <th>
@@ -30,5 +32,10 @@
             </th>
         </table>
     </form>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var form = new validateForm('form-validate');
+    })
+</script>
 </body>
 </html>
